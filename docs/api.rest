@@ -1,0 +1,43 @@
+### Tạo mới công văn đi
+POST http://localhost:8081/api/congvandi HTTP/1.1
+content-type: application/json
+
+{
+  "ngayCongVan": "2019-01-17",
+  "soCongVan": "190107/1403",
+  "noiDung": "Nội dung công văn 1",
+  "trichYeu": "Trích yếu công văn 1",
+  "dsDonViNhan": [12, 23, 17, 32]
+}
+
+### Trình công văn đi
+PUT http://localhost:8081/api/congvandi/147/trinh HTTP/1.1
+content-type: application/json
+
+{
+  "id": 147
+}
+
+### Ký duyệt công văn đi
+PUT http://localhost:8081/api/congvandi/147/kyduyet HTTP/1.1
+content-type: application/json
+
+{
+  "trangThai": 2,
+  "id": 147
+}
+
+### Huỷ duyệt công văn đi
+PUT http://localhost:8081/api/congvandi/147/huyduyet HTTP/1.1
+content-type: application/json
+
+{
+  "noiDung": "Nội dung không đẹp, sửa lại đi.",
+  "id": 147
+}
+
+### Get all công văn đi
+GET http://localhost:8081/api/congvandi HTTP/1.1
+    ?page=1
+    &limit=10
+    &trangThai=0
